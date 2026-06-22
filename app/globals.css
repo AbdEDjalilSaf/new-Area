@@ -25,7 +25,7 @@
   --background: var(--portfolio-bg);
   --foreground: var(--portfolio-text-primary);
 }
-
+ 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
