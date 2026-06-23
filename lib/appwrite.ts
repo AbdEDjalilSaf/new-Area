@@ -13,9 +13,9 @@ export const isAppwriteConfigured = Boolean(
   appwriteConfig.endpoint && appwriteConfig.projectId,
 );
 
-export function assertAppwriteConfigured() {
+export function assertAppwriteConfigured() { 
   if (!isAppwriteConfigured) {
-    throw new Error(
+    throw new Error( 
       "Missing Appwrite configuration. Set NEXT_PUBLIC_APPWRITE_ENDPOINT and NEXT_PUBLIC_APPWRITE_PROJECT_ID.",
     );
   }

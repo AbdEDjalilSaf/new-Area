@@ -53,4 +53,23 @@ body {
     var(--background);
   color: var(--foreground);
   font-family: var(--portfolio-font-body);
+
+  
+}
+
+
+/* ── Text Selection ── */
+::selection {
+  background-color: var(--selection-bg, #025a4e);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background-color: var(--selection-bg, #025a4e);
+  color: #ffffff;
+}
+ 
+::-webkit-selection {
+  background-color: var(--selection-bg, #025a4e);
+  color: #ffffff;
 }
