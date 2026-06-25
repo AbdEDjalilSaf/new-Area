@@ -11,7 +11,7 @@ const Work = lazy(() => import('./components/sections/Work'));
 const About = lazy(() => import('./components/sections/About'));
 const Services = lazy(() => import('./components/sections/Services'));
 const Testimonials = lazy(() => import('./components/sections/Testimonials'));
-const Contact = lazy(() => import('./components/sections/Contact'));
+// const Contact = lazy(() => import('./components/sections/Contact'));
 
 function SectionLoader() {
   return (
@@ -33,7 +33,7 @@ export default function App() {
         About={<Suspense fallback={<SectionLoader />}><About /></Suspense>}
         Services={<Suspense fallback={<SectionLoader />}><Services /></Suspense>}
         Testimonials={<Suspense fallback={<SectionLoader />}><Testimonials /></Suspense>}
-        Contact={<Suspense fallback={<SectionLoader />}><Contact /></Suspense>}
+        // Contact={<Suspense fallback={<SectionLoader />}><Contact /></Suspense>}
       />
       <Footer />
     </div>

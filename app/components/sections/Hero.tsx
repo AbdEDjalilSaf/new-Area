@@ -18,15 +18,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 -right-40 w-[400px] h-[400px] bg-accent/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-[1400px] mx-auto w-full">
-        {/* Status Badge */}
-        <div className={`animate-fade-up ${loaded ? '' : 'opacity-0'} mb-8`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface/50 backdrop-blur-sm">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-xs font-medium text-subtle tracking-wide uppercase">
-              Available for Freelance
-            </span>
-          </div>
-        </div>
+       
 
         {/* Main Heading */}
         <h1 className="text-5xl sm:text-7xl lg:text-[110px] xl:text-[130px] font-black leading-[0.9] tracking-tighter mb-8">

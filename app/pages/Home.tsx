@@ -5,10 +5,10 @@ interface HomeProps {
   About: React.ReactNode;
   Services: React.ReactNode;
   Testimonials: React.ReactNode;
-  Contact: React.ReactNode;
+  // Contact: React.ReactNode;
 }
 
-export default function Home({ Hero, Marquee, Work, About, Services, Testimonials, Contact }: HomeProps) {
+export default function Home({ Hero, Marquee, Work, About, Services, Testimonials }: HomeProps) {
   return (
     <main>
       {Hero}
@@ -17,7 +17,7 @@ export default function Home({ Hero, Marquee, Work, About, Services, Testimonial
       {About}
       {Services}
       {Testimonials}
-      {Contact}
+      {/* {Contact} */}
     </main>
   );
 }
