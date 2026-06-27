@@ -7,7 +7,7 @@ import Home from './pages/Home';
 // Lazy-loaded heavy sections for code splitting
 const Hero = lazy(() => import('./components/sections/Hero'));
 const Marquee = lazy(() => import('./components/ui/Marquee'));
-const Work = lazy(() => import('./components/sections/Work'));
+// const Work = lazy(() => import('./components/sections/Work'));
 const About = lazy(() => import('./components/sections/About'));
 const Services = lazy(() => import('./components/sections/Services'));
 const Testimonials = lazy(() => import('./components/sections/Testimonials'));
@@ -29,7 +29,7 @@ export default function App() {
       <Home
         Hero={<Suspense fallback={<SectionLoader />}><Hero /></Suspense>}
         Marquee={<Suspense fallback={<SectionLoader />}><Marquee /></Suspense>}
-        Work={<Suspense fallback={<SectionLoader />}><Work /></Suspense>}
+        // Work={<Suspense fallback={<SectionLoader />}><Work /></Suspense>}
         About={<Suspense fallback={<SectionLoader />}><About /></Suspense>}
         Services={<Suspense fallback={<SectionLoader />}><Services /></Suspense>}
         Testimonials={<Suspense fallback={<SectionLoader />}><Testimonials /></Suspense>}
