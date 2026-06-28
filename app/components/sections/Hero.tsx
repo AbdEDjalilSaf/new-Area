@@ -123,7 +123,7 @@ export default function Hero() {
             }`}
           >
             <p className="max-w-md text-subtle text-base lg:text-lg leading-relaxed">
-              I craft immersive digital experiences that blend bold design with
+              I craft immersive digital experiences that blend bold development with
               clean, performant code. Based in Algeria, working globally.
             </p>
           </div>
@@ -136,6 +136,6 @@ export default function Hero() {
           />
         </div>
       </section>
-    </>
+    </> 
   );
 }
