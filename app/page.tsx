@@ -1,18 +1,11 @@
 import { Suspense, lazy } from 'react';
-import Navbar from './components/layout/Navbar';
-import Footer from './components/layout/Footer';
 import CustomCursor from './components/layout/CustomCursor';
 import Home from './pages/Home';
 
-// Lazy-loaded heavy sections for code splitting
 const Hero = lazy(() => import('./components/sections/Hero'));
 const Marquee = lazy(() => import('./components/ui/Marquee'));
 const WorkCards = lazy(() => import('./components/sections/WorkCards'));
-// const Work = lazy(() => import('./components/sections/Work'));
-// const About = lazy(() => import('./components/sections/About'));
-// const Services = lazy(() => import('./components/sections/Services'));
-// const Testimonials = lazy(() => import('./components/sections/Testimonials'));
-// const Contact = lazy(() => import('./components/sections/Contact'));
+
 
 function SectionLoader() {
   return (
@@ -26,18 +19,11 @@ export default function App() {
   return (
     <div className="grain-overlay">
       <CustomCursor />
-      <Navbar />
       <Home
         Hero={<Suspense fallback={<SectionLoader />}><Hero /></Suspense>}
         Marquee={<Suspense fallback={<SectionLoader />}><Marquee /></Suspense>}
         WorkCards={<Suspense fallback={<SectionLoader />}><WorkCards /></Suspense>}
-        // Work={<Suspense fallback={<SectionLoader />}><Work /></Suspense>}
-        // About={<Suspense fallback={<SectionLoader />}><About /></Suspense>}
-        // Services={<Suspense fallback={<SectionLoader />}><Services /></Suspense>}
-        // Testimonials={<Suspense fallback={<SectionLoader />}><Testimonials /></Suspense>}
-        // Contact={<Suspense fallback={<SectionLoader />}><Contact /></Suspense>}
       />
-      <Footer />
     </div>
   );
 }

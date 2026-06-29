@@ -23,7 +23,7 @@ export default function Navbar() {
     >
       <div className="max-w-[500px]  mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="#" className="text-xl font-bold tracking-tight hoverable">
+        <Link href="/" className="text-xl font-bold tracking-tight hoverable">
           SA<span className="text-accent">.</span>
         </Link>
 
@@ -32,8 +32,8 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <Link
               key={link}
-              href={`#${link.toLowerCase()}`}
-              className="nav-link text-sm font-medium text-subtle hover:text-fg transition-colors hoverable"
+              href={`${link.toLowerCase()}`}
+              className="nav-link text-sm font-medium text-subtle hover:text-accent transition-colors"
             >
               {link}
             </Link>
@@ -43,22 +43,22 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden flex bg-red-500 flex-col gap-1.5 hoverable"
+          className="md:hidden flex hover:cursor-pointer flex-col gap-1.5 hoverable"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
         >
           <span
-            className={`block w-6 h-0.5 bg-fg transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-[#025a4e] hover:bg-[#025a4e]/80  transition-all duration-300 ${
               menuOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-fg transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-[#025a4e] hover:bg-[#025a4e]/80  transition-all duration-300 ${
               menuOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-fg transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-[#025a4e] hover:bg-[#025a4e]/80  transition-all duration-300 ${
               menuOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           />
@@ -75,7 +75,7 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <Link
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`${link.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="text-2xl font-semibold text-fg hover:text-accent transition-colors"
             >

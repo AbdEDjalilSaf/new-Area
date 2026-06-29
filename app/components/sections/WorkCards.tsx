@@ -3,7 +3,7 @@ import React from 'react';
 const works = [
   {
     id: 1,
-    title: 'AI',
+    title: 'Frontend',
     subtitle: 'HELP SCOUT',
     bgColor: 'bg-[#d4a5e0]', // pastel purple
     mockup: (
@@ -93,42 +93,11 @@ const works = [
       </div>
     ),
   },
-  // {
-  //   id: 4,
-  //   title: 'Mobile',
-  //   subtitle: 'HELP SCOUT',
-  //   bgColor: 'bg-[#b8d4f0]', // pastel blue
-  //   mockup: (
-  //     <div className="w-32 mx-auto bg-black rounded-[2rem] p-2 shadow-xl">
-  //       <div className="bg-white rounded-[1.5rem] overflow-hidden">
-  //         <div className="h-4 bg-emerald-600 flex items-center justify-between px-4">
-  //           <div className="text-[6px] text-white">9:41</div>
-  //           <div className="flex gap-0.5">
-  //             <div className="w-2 h-2 bg-white/50 rounded-full" />
-  //             <div className="w-2 h-2 bg-white/50 rounded-full" />
-  //           </div>
-  //         </div>
-  //         <div className="bg-emerald-600 p-3 pb-8">
-  //           <div className="flex -space-x-2 justify-center mb-2">
-  //             {[1,2,3,4,5].map(i => (
-  //               <div key={i} className="w-6 h-6 rounded-full bg-gray-300 border-2 border-emerald-600" />
-  //             ))}
-  //           </div>
-  //           <div className="h-1.5 bg-white/30 rounded w-3/4 mx-auto mb-1" />
-  //           <div className="h-1.5 bg-white/30 rounded w-1/2 mx-auto" />
-  //         </div>
-  //         <div className="bg-white p-2 space-y-1">
-  //           <div className="h-1.5 bg-gray-200 rounded w-full" />
-  //           <div className="h-1.5 bg-gray-200 rounded w-5/6" />
-  //         </div>
-  //       </div>
-  //     </div>
-  //   ),
-  // },
+ 
 ];
 
 export default function WorkCards() {
-  return (
+  return ( 
     <section className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className=" mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">

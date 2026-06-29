@@ -1,7 +1,3 @@
-
-
-
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -16,8 +12,7 @@ export default function Hero() {
 
   return (
     <>
-      {/* Twinkle keyframes — scoped to this component */}
-      <style>{`
+       <style>{`
         @keyframes twinkle {
           0%, 100% {
             opacity: 1;
