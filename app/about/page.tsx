@@ -1,8 +1,15 @@
 
+import type { Metadata } from "next";
 import Image from "next/image";
 import Logo from "@/public/logo.jpg";
 import All from "@/public/all.jpg";
 import One from "@/public/one.jpg";
+
+export const metadata: Metadata = {
+  title: "Portfolio - About",
+  description:
+    "Learn more about Abd El-Djalil, a frontend developer from Algeria specializing in accessible, user-centric web experiences.",
+};
 
 const EXPERIENCE = [
   { id: 1, company: "GiveDirectly", role: "Frontend Engineer", years: "4", shade: "bg-teal-700", top: 2,    left: 78.5, width: 23 },
@@ -158,7 +165,7 @@ export default function Page() {
             <span className="absolute group-hover:opacity-100 opacity-0 transition-opacity duration-300 bottom-4 left-4 bg-amber-50/90 dark:bg-[#0a1f14]/90 text-teal-900 dark:text-[#d4f5e0] text-sm font-medium px-4 py-2 rounded-full">
               CNTIC Workshop
             </span>
-          </div>
+          </div> 
 
           <div className="relative group aspect-video sm:aspect-[3.35/4] rounded-2xl md:rounded-3xl overflow-hidden">
             <Image

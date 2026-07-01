@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio ",
+  title: "Portfolio - Frontend Developer",
   description:
     "A warm, expressive portfolio focused on engaging, accessible, and user-centric digital experiences.",
 };
