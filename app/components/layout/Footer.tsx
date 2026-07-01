@@ -33,7 +33,7 @@ export default function Footer() {
               ${dark ? "text-[#a3c9b8]/80" : "text-[#3a3530]/70"}
             `}
           >
-            © 2026 Seán Halpin&nbsp;•&nbsp;Colophon
+            © 2026 Saf Abd El-Djalil&nbsp;•&nbsp;Colophon
           </p>
 
           <div className="flex gap-16 sm:gap-20">
