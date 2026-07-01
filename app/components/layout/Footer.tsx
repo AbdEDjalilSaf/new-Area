@@ -31,7 +31,7 @@ export default function Footer() {
             className={`
               text-sm leading-relaxed
               ${dark ? "text-[#a3c9b8]/80" : "text-[#3a3530]/70"}
-            `}
+            `} 
           >
             © 2026 Saf Abd El-Djalil&nbsp;•&nbsp;Colophon
           </p>

@@ -1,6 +1,8 @@
 
 import Image from "next/image";
 import Logo from "@/public/logo.jpg";
+import All from "@/public/all.jpg";
+import One from "@/public/one.jpg";
 
 const EXPERIENCE = [
   { id: 1, company: "GiveDirectly", role: "Frontend Engineer", years: "4", shade: "bg-teal-700", top: 2,    left: 78.5, width: 23 },
@@ -144,17 +146,31 @@ export default function Page() {
 
       {/* Images Section */}
       <section className="px-4 sm:px-6 py-14 md:py-24 max-w-6xl mx-auto">
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
-          <div className="aspect-video sm:aspect-square bg-gradient-to-br from-slate-900 to-slate-700 rounded-lg overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center text-white text-center p-6">
-              <p className="text-lg font-semibold">Architectural Image</p>
-            </div>
+        <div className="grid sm:grid-cols-[1.6fr_1fr] gap-4 md:gap-6">
+          <div className="relative group aspect-video sm:aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden">
+            <Image
+              src={All}
+              alt="Group photo at CNTIC workshop"
+              fill
+              sizes="(min-width: 640px) 55vw, 100vw"
+              className="object-cover "
+            />
+            <span className="absolute group-hover:opacity-100 opacity-0 transition-opacity duration-300 bottom-4 left-4 bg-amber-50/90 dark:bg-[#0a1f14]/90 text-teal-900 dark:text-[#d4f5e0] text-sm font-medium px-4 py-2 rounded-full">
+              CNTIC Workshop
+            </span>
           </div>
 
-          <div className="aspect-video sm:aspect-square bg-gradient-to-br from-sky-300 to-sky-100 dark:from-sky-700 dark:to-sky-500 rounded-lg overflow-hidden">
-            <div className="w-full h-full flex items-center justify-center text-slate-600 dark:text-[#a3c9b8] text-center p-6">
-              <p className="text-lg font-semibold">Red Tram Scene</p>
-            </div>
+          <div className="relative group aspect-video sm:aspect-[3.35/4] rounded-2xl md:rounded-3xl overflow-hidden">
+            <Image
+              src={One}
+              alt="Abd El-Djalil at the CNTIC deep learning workshop"
+              fill
+              sizes="(min-width: 640px) 35vw, 100vw"
+              className="object-cover"
+            />
+            <span className="absolute group-hover:opacity-100 opacity-0 transition-opacity duration-300 bottom-4 left-4 bg-amber-50/90 dark:bg-[#0a1f14]/90 text-teal-900 dark:text-[#d4f5e0] text-sm font-medium px-4 py-2 rounded-full">
+              AI Workshop
+            </span>
           </div>
         </div>
       </section>
