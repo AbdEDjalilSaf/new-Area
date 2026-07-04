@@ -40,7 +40,7 @@ function Hero() {
         </h1>
       </div>
 
-    </section>
+    </section> 
   );
 }
 
