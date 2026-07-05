@@ -3,10 +3,10 @@ import { Account, Client, Databases, ID, Storage } from "appwrite";
 export const appwriteConfig = {
   endpoint:
     process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT ??
-    "https://cloud.appwrite.io/v1",
-  projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID ?? "",
-  databaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID ?? "",
-  storageBucketId: process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ID ?? "",
+    "https://fra.cloud.appwrite.io/v1",
+  projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID ?? "66bcf8b2001ac5147456",
+  databaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID ?? "6a4a2f930018fec9402f",
+  storageBucketId: process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ID ?? "6a4a2fed001cd3d5ffc2",
 };
 
 export const isAppwriteConfigured = Boolean(

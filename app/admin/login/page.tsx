@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { User, Lock, Eye, EyeOff } from "lucide-react";
+import { account } from "@/lib/appwrite";
+import { AppwriteException } from "appwrite";
 
 export default function LoginForm() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false);  
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,18 +25,26 @@ export default function LoginForm() {
 
     setLoading(true);
     try {
-      // Replace with your real auth call
-      await new Promise((resolve) => setTimeout(resolve, 900));
-      console.log("Signing in with", { email, password });
+      const session = await account.createEmailPasswordSession(email, password);
+      document.cookie = `accessToken=${session.$id}; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Lax`;
+      router.push("/admin");
     } catch (err) {
-      setError("Something went wrong. Please try again.");
+      if (err instanceof AppwriteException) {
+        if (err.type === "user_invalid_credentials") {
+          setError("Invalid email or password.");
+        } else {
+          setError(err.message);
+        }
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-4 ">
+    <div className="min-h-screen w-full  flex items-center justify-center p-4 ">
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-sm sm:max-w-md rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl shadow-2xl px-6 sm:px-10 py-8 sm:py-10"
