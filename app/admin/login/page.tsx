@@ -32,7 +32,7 @@ export default function LoginForm() {
       if (err instanceof AppwriteException) {
         if (err.type === "user_invalid_credentials") {
           setError("Invalid email or password.");
-        } else {
+        } else { 
           setError(err.message);
         }
       } else {
