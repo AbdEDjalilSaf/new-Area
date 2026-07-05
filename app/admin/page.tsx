@@ -197,7 +197,7 @@ export default function AdminDashboard() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed z-40 flex w-64 flex-col bg-[#181A20] text-stone-300 transition-transform duration-200 lg:static lg:translate-x-0
+        className={`fixed z-40 h-full lg:h-auto flex w-64 flex-col bg-[#181A20] text-stone-300 transition-transform duration-200 lg:static lg:translate-x-0
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="flex items-center gap-2 px-5 py-5">

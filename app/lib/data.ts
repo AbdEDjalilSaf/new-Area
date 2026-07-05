@@ -1,4 +1,4 @@
-export const NAV_LINKS = ['Work', 'About', 'Notes', 'Contact'];
+export const NAV_LINKS = ['Work', 'About', 'Contact'];
 
 export const MARQUEE_ITEMS = [
   'React', 'Next.js', 'Three.js', 'TypeScript',
