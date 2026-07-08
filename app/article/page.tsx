@@ -120,9 +120,9 @@ function TrendingArticles({ articles, loading }: { articles: Article[]; loading:
           <>
             <h3 className="mt-28 text-3xl lg:text-2xl font-semibold">More Articles</h3>
             <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {rest.map((article) => {
+              {rest.map((article) => { 
                 const excerpt =
-                  article.content.length > 120
+                  article.content.length > 120 
                     ? article.content.slice(0, 120) + "..."
                     : article.content;
                 return (
