@@ -93,14 +93,39 @@ const works = [
   },
  
 ];
-
+import Link from "next/link";
 export default function WorkCards() {
   return ( 
     <section className="min-h-screen py-16 px-4 sm:px-6 lg:px-8">
       <div className=" mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8">
           {works.map((work) => (
+            work.id == 2 ? (
+            <Link href="article" key={work.id}>
             <article
+              className={`group relative ${work.bgColor} ${work.id === 2  ? 'lg:-ml-28 lg:w-[120%] xl:w-[110%] ' : ''} rounded-[2rem] p-6 sm:p-8 lg:p-10 overflow-hidden transition-transform duration-300 hover:scale-[1.02] cursor-pointer`}
+            >
+              {/* Header */}
+              <div className="text-right mb-6">
+                <p className="text-xs font-semibold tracking-widest text-gray-700/80 uppercase">
+                  {work.subtitle}
+                </p>
+                <h3 className="text-3xl sm:text-4xl font-bold text-gray-800 mt-1">
+                  {work.title}
+                </h3>
+              </div>
+
+              {/* Mockup Preview */}
+              <div className="relative w-full transform transition-transform duration-300 group-hover:translate-y-[-4px]">
+                {work.mockup}
+              </div>
+
+              {/* Subtle overlay on hover */}
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
+            </article>
+            </Link>
+            ) : (
+              <article
               key={work.id}
               className={`group relative ${work.bgColor} ${work.id === 1 || work.id === 4 ? 'w-full lg:w-3/4' : ''} ${work.id === 2  ? 'lg:-ml-28 lg:w-[120%] xl:w-[110%] ' : ''} ${work.id === 3  ? 'lg:-mr-28 lg:w-[120%] xl:w-[110%] ' : ''}  rounded-[2rem] p-6 sm:p-8 lg:p-10 overflow-hidden transition-transform duration-300 hover:scale-[1.02] cursor-pointer`}
             >
@@ -122,6 +147,7 @@ export default function WorkCards() {
               {/* Subtle overlay on hover */}
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
             </article>
+            )
           ))}
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Account, Client, Databases, ID, Storage } from "appwrite";
+import { Account, Client, Databases, Query, ID, Storage } from "appwrite";
 
 export const appwriteConfig = {
   endpoint:
@@ -6,6 +6,7 @@ export const appwriteConfig = {
     "https://fra.cloud.appwrite.io/v1",
   projectId: process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID ?? "6a4a9d0c00347de63b56",
   databaseId: process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID ?? "6a4a9d8100359041ea1c",
+  articlesCollectionId: process.env.NEXT_PUBLIC_APPWRITE_ARTICLES_COLLECTION_ID ?? "a",
   storageBucketId: process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ID ?? "6a4a9ddf000ee1170de6",
 };
 
@@ -30,4 +31,7 @@ if (appwriteConfig.projectId) {
 export const account = new Account(client);
 export const databases = new Databases(client);
 export const storage = new Storage(client);
-export { ID };
+export { ID, Query };
+
+export const DATABASE_ID = appwriteConfig.databaseId;
+export const ARTICLES_COLLECTION_ID = appwriteConfig.articlesCollectionId;
