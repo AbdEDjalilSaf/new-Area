@@ -3,9 +3,9 @@
 import { ReactNode } from "react";
 
 /**
- * ProjectsGrid
+ * DesignGrid
  * -------------------------------------------------------------------------
- * A standalone "Projects" section styled after a soft-gradient, rounded-card
+ * A standalone "Design" section styled after a soft-gradient, rounded-card
  * showcase: dark forest-green display type, a warm cream→sage→blush
  * background wash in light mode, and the same deep forest-green dark mode
  * used on the About page (#0a1f14 background, #d4f5e0 headings, #8ab5a0
@@ -15,16 +15,16 @@ import { ReactNode } from "react";
  * Next.js route or page and it will fill the content area.
  *
  * Usage:
- *   import ProjectsGrid from "@/components/ProjectsGrid";
- *   export default function ProjectsPage() {
- *     return <ProjectsGrid />;
+ *   import DesignGrid from "@/components/DesignGrid";
+ *   export default function DesignPage() {
+ *     return <DesignGrid />;
  *   }
  *
- * Customize the `projects` array below with your own work.
+ * Customize the `Design` array below with your own work.
  * -------------------------------------------------------------------------
  */
 
-interface Project {
+interface Design {
   title: string;
   description: string;
   /** Tailwind classes for the icon chip background, e.g. "bg-emerald-100" */
@@ -36,7 +36,7 @@ interface Project {
   link: string;
 }
 
-const projects: Project[] = [
+const Design: Design[] = [
   {
     title: "GoScore",
     description:
@@ -160,7 +160,7 @@ const projects: Project[] = [
   },
 ];
 
-export default function ProjectsGrid() {
+export default function DesignGrid() {
   return (
     <section
       className="relative min-h-screen w-full overflow-hidden px-6 pb-20 pt-32 sm:px-10 lg:px-16 bg-amber-50 bg-[linear-gradient(135deg,#dfe6cf_0%,#ece4ce_30%,#f1e6d8_55%,#ecdad8_78%,#e9d3d8_100%)] dark:bg-[#0a1f14] dark:bg-none dark:text-[#a3c9b8]"
@@ -168,7 +168,7 @@ export default function ProjectsGrid() {
       {/* Hero */}
       <div className="relative mx-auto max-w-3xl text-center">
         <h1 className="inline-flex items-center gap-2 font-extrabold tracking-tight text-[#0f3d2e] dark:text-[#d4f5e0] text-6xl sm:text-7xl">
-          Projects
+          UI Design
           <span className="text-white dark:text-[#d4f5e0] drop-shadow-sm text-4xl leading-none">
             ✦
           </span>
@@ -182,7 +182,7 @@ export default function ProjectsGrid() {
 
       {/* Grid */}
       <div className="relative mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {Design.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>
@@ -190,7 +190,7 @@ export default function ProjectsGrid() {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: Design }) {
   return (
     <a
       href={project.link}

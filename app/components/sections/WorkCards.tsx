@@ -124,8 +124,33 @@ export default function WorkCards() {
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
             </article>
             </Link>
-            ) : (
+            ) : work.id === 1 ? (
+            <Link href="projects" key={work.id}>
               <article
+              key={work.id}
+              className={`group relative ${work.bgColor} ${work.id === 1  ? 'w-full lg:w-3/4' : ''}  rounded-[2rem] p-6 sm:p-8 lg:p-10 overflow-hidden transition-transform duration-300 hover:scale-[1.02] cursor-pointer`}
+            >
+              {/* Header */}
+              <div className="text-right mb-6">
+                <p className="text-xs font-semibold tracking-widest text-gray-700/80 uppercase">
+                  {work.subtitle}
+                </p>
+                <h3 className="text-3xl sm:text-4xl font-bold text-gray-800 mt-1">
+                  {work.title}
+                </h3>
+              </div>
+
+              {/* Mockup Preview */}
+              <div className="relative w-full transform transition-transform duration-300 group-hover:translate-y-[-4px]">
+                {work.mockup}
+              </div>
+
+              {/* Subtle overlay on hover */}
+              <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
+            </article>
+            </Link>
+            ) :  
+            <article
               key={work.id}
               className={`group relative ${work.bgColor} ${work.id === 1 || work.id === 4 ? 'w-full lg:w-3/4' : ''} ${work.id === 2  ? 'lg:-ml-28 lg:w-[120%] xl:w-[110%] ' : ''} ${work.id === 3  ? 'lg:-mr-28 lg:w-[120%] xl:w-[110%] ' : ''}  rounded-[2rem] p-6 sm:p-8 lg:p-10 overflow-hidden transition-transform duration-300 hover:scale-[1.02] cursor-pointer`}
             >
@@ -147,7 +172,6 @@ export default function WorkCards() {
               {/* Subtle overlay on hover */}
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
             </article>
-            )
           ))}
         </div>
       </div>
