@@ -265,20 +265,18 @@ interface Project {
   chipBg: string;
   /** The glyph/emoji/initial shown inside the icon chip */
   icon: ReactNode;
-  /** Optional pill badge, e.g. "Soon", "New", "Beta" */
-  badge?: string;
   /** Optional mini preview rendered under the card copy */
   preview?: ReactNode;
-  /** Optional external link */
-  href?: string;
+  link: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Pulse Admin",
+    title: "GoScore",
     description:
-      "Next.js + Appwrite admin dashboard for content, notes, and client contacts — full CRUD, search, and modals.",
+      "Next.js + .Net backend dashboard for test and courses teacher scores and quality assessment.",
     chipBg: "bg-emerald-100 dark:bg-emerald-900/40",
+    link: "https://github.com/AbdEDjalilSaf/go-score",
     icon: <span className="text-emerald-700 dark:text-emerald-300 text-lg">◱</span>,
     preview: (
       <div className="rounded-xl bg-[#0f3d2e] dark:bg-[#0a1f14] p-3 mt-4 dark:ring-1 dark:ring-white/[0.06]">
@@ -297,17 +295,19 @@ const projects: Project[] = [
     ),
   },
   {
-    title: "Agriplot",
+    title: "TafawaQ",
     description:
-      "EUDR compliance platform — typed data modules, plot mapping, and risk reporting for supply-chain teams.",
+      "welcome to Tafawaq for see all Packages in your contry and state for your study career.",
     chipBg: "bg-lime-100 dark:bg-lime-900/40",
+    link: "https://github.com/AbdEDjalilSaf/tafawaq",
     icon: <span className="text-lime-700 dark:text-lime-300 text-lg">⬢</span>,
   },
   {
-    title: "Outline Kit",
+    title: "Admin Panel",
     description:
-      "Spec-out-your-designs helper: instantly annotate spacing, radius, and color tokens for handoff.",
+      "Admin panel for see all Admin's opration and classes inuser,products,waiting products,sub-category and banners.",
     chipBg: "bg-sky-100 dark:bg-sky-900/40",
+    link: "https://github.com/AbdEDjalilSaf/Admin-Panel",
     icon: <span className="text-sky-700 dark:text-sky-300 text-lg">▭</span>,
     preview: (
       <div className="rounded-xl bg-white dark:bg-[#0a1f14] border border-black/5 dark:border-white/[0.06] p-3 mt-4 shadow-sm">
@@ -331,30 +331,33 @@ const projects: Project[] = [
     ),
   },
   {
-    title: "Custoji",
+    title: "job-portal",
     description:
-      "Generate custom emoji-that-should-not-be — quick, silly, and just detailed enough to look real.",
+      "small platform for sell some products by orders.",
+    link: "https://github.com/AbdEDjalilSaf/job-portal",
     chipBg: "bg-pink-100 dark:bg-pink-900/40",
     icon: <span className="text-lg">🫠</span>,
   },
   {
-    title: "Cabinet Calculator",
+    title: "Prayer-Times",
     description:
-      "Cleaned-up pricing calculator for a kitchen-cabinet client — rebuilt for production deployment.",
+      "Prayer Times for Muslims around my country.",
     chipBg: "bg-amber-100 dark:bg-amber-900/40",
+    link: "https://github.com/AbdEDjalilSaf/Prayer-Times",
     icon: <span className="text-amber-700 dark:text-amber-300 text-lg">▤</span>,
   },
   {
-    title: "Annotator",
-    description: "Flag accessibility concerns directly on designs to start conversations with developers.",
+    title: "Cywork_App",
+    link: "https://github.com/AbdEDjalilSaf/Cywork_App",
+    description: "welcome to Cywork App for see all Events and News of Cywork Club.",
     chipBg: "bg-emerald-50 dark:bg-emerald-900/30",
     icon: <span className="text-emerald-700 dark:text-emerald-300 text-lg">✎</span>,
-    badge: "Soon",
   },
   {
-    title: "Droplette",
+    title: "Reayah",
+    link: "https://github.com/AbdEDjalilSaf/Reayah",
     description:
-      "AI-assisted color palette generator that respects an existing design system's tokens.",
+      "welcome to Reayah Health System for see all patients and appioments.",
     chipBg: "bg-violet-100 dark:bg-violet-900/40",
     icon: <span className="text-violet-700 dark:text-violet-300 text-lg">◐</span>,
     preview: (
@@ -376,14 +379,16 @@ const projects: Project[] = [
     ),
   },
   {
-    title: "Browso",
-    description: "See all your machine's details — rendered like it's still 1999.",
+    title: "ShopFlow_wasydoo",
+    link: "https://github.com/AbdEDjalilSaf/ShopFlow_wasydoo",
+    description: "ShopFlow for see all products and users and categories and look for details and create , delete, update your products and users.",
     chipBg: "bg-blue-100 dark:bg-blue-900/40",
     icon: <span className="text-blue-800 dark:text-blue-300 text-lg">▦</span>,
   },
   {
-    title: "Cover Status",
-    description: "Lightweight status thumbnails so people know what's currently in progress.",
+    title: "Disol Agency",
+    link: "https://github.com/AbdEDjalilSaf/Disol-learning-platform",
+    description: "welcome to Disol learning platform for see all courses and and sessions to get hire great developers.",
     chipBg: "bg-indigo-100 dark:bg-indigo-900/40",
     icon: <span className="text-indigo-700 dark:text-indigo-300 text-lg">●</span>,
   },
@@ -420,11 +425,11 @@ export default function ProjectsGrid() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const Wrapper = project.href ? "a" : "div";
-
   return (
-    <Wrapper
-      {...(project.href ? { href: project.href } : {})}
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group relative flex flex-col rounded-3xl bg-[#f7f2e9]/90 dark:bg-[#1a3a28] backdrop-blur-sm p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] ring-1 ring-black/[0.04] dark:ring-white/[0.06] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md dark:hover:bg-[#1a3a28]/80"
     >
       <div className="flex items-start justify-between gap-4">
@@ -432,11 +437,7 @@ function ProjectCard({ project }: { project: Project }) {
           <h3 className="text-lg font-bold text-[#0f3d2e] dark:text-[#d4f5e0]">
             {project.title}
           </h3>
-          {project.badge && (
-            <span className="rounded-full bg-[#0f3d2e] dark:bg-[#d4f5e0] px-2.5 py-0.5 text-[11px] font-medium text-white dark:text-[#0a1f14]">
-              {project.badge}
-            </span>
-          )}
+          
         </div>
 
         <span
@@ -444,13 +445,13 @@ function ProjectCard({ project }: { project: Project }) {
         >
           {project.icon}
         </span>
-      </div>
+      </div> 
 
       <p className="mt-2 text-sm leading-relaxed text-[#4b5348]/80 dark:text-[#8ab5a0]">
         {project.description}
       </p>
 
       {project.preview && <div className="mt-auto">{project.preview}</div>}
-    </Wrapper>
+    </a>
   );
 }
