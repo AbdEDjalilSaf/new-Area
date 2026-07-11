@@ -26,7 +26,6 @@ import { ReactNode } from "react";
 
 interface Design {
   title: string;
-  description: string;
   /** Tailwind classes for the icon chip background, e.g. "bg-emerald-100" */
   chipBg: string;
   /** The glyph/emoji/initial shown inside the icon chip */
@@ -38,11 +37,9 @@ interface Design {
 
 const Design: Design[] = [
   {
-    title: "GoScore",
-    description:
-      "Next.js + .Net backend dashboard for test and courses teacher scores and quality assessment.",
+    title: "Jones & Brown Legal",
     chipBg: "bg-emerald-100 dark:bg-emerald-900/40",
-    link: "https://github.com/AbdEDjalilSaf/go-score",
+    link: "https://www.figma.com/site/sotKOfFrYLHuNHmYcygDnt/Untitled?node-id=1-607&t=Ew6K3xLg5tfv6zJb-0",
     icon: <span className="text-emerald-700 dark:text-emerald-300 text-lg">◱</span>,
     preview: (
       <div className="rounded-xl bg-[#0f3d2e] dark:bg-[#0a1f14] p-3 mt-4 dark:ring-1 dark:ring-white/[0.06]">
@@ -61,19 +58,44 @@ const Design: Design[] = [
     ),
   },
   {
-    title: "TafawaQ",
-    description:
-      "welcome to Tafawaq for see all Packages in your contry and state for your study career.",
+    title: "Simple layout page",
     chipBg: "bg-lime-100 dark:bg-lime-900/40",
-    link: "https://github.com/AbdEDjalilSaf/tafawaq",
+    link: "https://www.figma.com/make/5AVLfwVDq8wwiq9tVo7JBx/Simple-Landing-Page?t=Ew6K3xLg5tfv6zJb-0",
     icon: <span className="text-lime-700 dark:text-lime-300 text-lg">⬢</span>,
+    preview: (
+      <div className="rounded-xl bg-[#1a2e1a] dark:bg-[#0a1f14] p-3 mt-4 dark:ring-1 dark:ring-white/[0.06]">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-lime-200 text-xs font-medium">التقويم</span>
+          <span className="text-lime-400 text-[10px]">mar 2026</span>
+        </div>
+        <div className="grid grid-cols-7 gap-1 mb-2">
+          {Array.from({ length: 28 }, (_, i) => (
+            <span
+              key={i}
+              className={`h-2.5 w-2.5 rounded-full ${
+                i === 12
+                  ? "bg-lime-400 ring-1 ring-lime-300"
+                  : i > 20
+                  ? "bg-lime-700/40"
+                  : "bg-lime-800/50"
+              }`}
+            />
+          ))}
+        </div>
+        <div className="flex items-center gap-2 mt-2">
+          <span className="h-6 w-6 rounded-full bg-lime-500/30 flex items-center justify-center text-[10px] text-lime-300">✓</span>
+          <div className="flex-1">
+            <div className="h-1.5 rounded-full bg-lime-700/50 w-3/4" />
+            <div className="h-1 rounded-full bg-lime-800/40 w-1/2 mt-1" />
+          </div>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "Admin Panel",
-    description:
-      "Admin panel for see all Admin's opration and classes inuser,products,waiting products,sub-category and banners.",
+    title: "Morphix ui components",
     chipBg: "bg-sky-100 dark:bg-sky-900/40",
-    link: "https://github.com/AbdEDjalilSaf/Admin-Panel",
+    link: "https://www.figma.com/design/x1YHiH0u5bPAgt98jAKoSp/Morphex-UI---Premium-Multi-Purpose-Landing-Page-Bundle---Mobile-App----Property---Personal-Website--Preview-?t=Ew6K3xLg5tfv6zJb-0",
     icon: <span className="text-sky-700 dark:text-sky-300 text-lg">▭</span>,
     preview: (
       <div className="rounded-xl bg-white dark:bg-[#0a1f14] border border-black/5 dark:border-white/[0.06] p-3 mt-4 shadow-sm">
@@ -97,33 +119,8 @@ const Design: Design[] = [
     ),
   },
   {
-    title: "job-portal",
-    description:
-      "small platform for sell some products by orders.",
-    link: "https://github.com/AbdEDjalilSaf/job-portal",
-    chipBg: "bg-pink-100 dark:bg-pink-900/40",
-    icon: <span className="text-lg">🫠</span>,
-  },
-  {
-    title: "Prayer-Times",
-    description:
-      "Prayer Times for Muslims around my country.",
-    chipBg: "bg-amber-100 dark:bg-amber-900/40",
-    link: "https://github.com/AbdEDjalilSaf/Prayer-Times",
-    icon: <span className="text-amber-700 dark:text-amber-300 text-lg">▤</span>,
-  },
-  {
-    title: "Cywork_App",
-    link: "https://github.com/AbdEDjalilSaf/Cywork_App",
-    description: "welcome to Cywork App for see all Events and News of Cywork Club.",
-    chipBg: "bg-emerald-50 dark:bg-emerald-900/30",
-    icon: <span className="text-emerald-700 dark:text-emerald-300 text-lg">✎</span>,
-  },
-  {
-    title: "Reayah",
-    link: "https://github.com/AbdEDjalilSaf/Reayah",
-    description:
-      "welcome to Reayah Health System for see all patients and appioments.",
+    title: "Saas base Schools",
+    link: "https://www.figma.com/design/n19cV3bgdkjUAjm2mwATco/SAAS-base-school--Coaching-automation-platform--Community-?t=Ew6K3xLg5tfv6zJb-0",
     chipBg: "bg-violet-100 dark:bg-violet-900/40",
     icon: <span className="text-violet-700 dark:text-violet-300 text-lg">◐</span>,
     preview: (
@@ -145,18 +142,72 @@ const Design: Design[] = [
     ),
   },
   {
-    title: "ShopFlow_wasydoo",
-    link: "https://github.com/AbdEDjalilSaf/ShopFlow_wasydoo",
-    description: "ShopFlow for see all products and users and categories and look for details and create , delete, update your products and users.",
+    title: "Tution Class app",
+    link: "https://www.figma.com/design/vhhkgmeDF43oNZSUrFL2a2/Tution-Class-app--Community-?t=Ew6K3xLg5tfv6zJb-0",
     chipBg: "bg-blue-100 dark:bg-blue-900/40",
     icon: <span className="text-blue-800 dark:text-blue-300 text-lg">▦</span>,
+    preview: (
+      <div className="rounded-xl bg-[#121a2e] dark:bg-[#0a1f14] p-3 mt-4 dark:ring-1 dark:ring-white/[0.06]">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-blue-200 text-xs font-medium">Cart</span>
+          <span className="bg-blue-500 text-[9px] text-white px-1.5 py-0.5 rounded-full">2</span>
+        </div>
+        <div className="space-y-2">
+          <div className="flex items-center gap-2">
+            <span className="h-8 w-8 rounded-lg bg-blue-800/50 shrink-0" />
+            <div className="flex-1">
+              <div className="h-1.5 rounded-full bg-blue-700/50 w-3/4" />
+              <div className="h-1 rounded-full bg-blue-800/40 w-1/3 mt-1" />
+            </div>
+            <span className="text-blue-300 text-[10px] font-medium">$24</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="h-8 w-8 rounded-lg bg-blue-800/50 shrink-0" />
+            <div className="flex-1">
+              <div className="h-1.5 rounded-full bg-blue-700/50 w-2/3" />
+              <div className="h-1 rounded-full bg-blue-800/40 w-1/4 mt-1" />
+            </div>
+            <span className="text-blue-300 text-[10px] font-medium">$18</span>
+          </div>
+        </div>
+        <div className="mt-3 pt-2 border-t border-blue-800/40 flex items-center justify-between">
+          <span className="text-blue-400 text-[10px]">Total</span>
+          <span className="text-blue-200 text-xs font-bold">$42</span>
+        </div>
+      </div>
+    ),
   },
   {
-    title: "Disol Agency",
-    link: "https://github.com/AbdEDjalilSaf/Disol-learning-platform",
-    description: "welcome to Disol learning platform for see all courses and and sessions to get hire great developers.",
+    title: "MaxSkills - Online Learning",
+    link: "https://www.figma.com/design/fH4uOrAEK6TGnOypsZcobp/MaxSkills---Online-Learning-Platform-Admin-Dashboard--Preview-?node-id=1248-4&p=f&t=Ew6K3xLg5tfv6zJb-0",
     chipBg: "bg-indigo-100 dark:bg-indigo-900/40",
     icon: <span className="text-indigo-700 dark:text-indigo-300 text-lg">●</span>,
+    preview: (
+      <div className="rounded-xl bg-[#161429] dark:bg-[#0a1f14] p-3 mt-4 dark:ring-1 dark:ring-white/[0.06]">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="h-8 w-8 rounded-lg bg-indigo-500/30 flex items-center justify-center text-indigo-300 text-xs">D</span>
+          <div>
+            <div className="h-1.5 rounded-full bg-indigo-600/50 w-20" />
+            <div className="h-1 rounded-full bg-indigo-800/40 w-14 mt-1" />
+          </div>
+        </div>
+        <div className="space-y-1.5 mb-3">
+          {[85, 62, 94, 40].map((w, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <div className="h-1 rounded-full bg-indigo-800/40 flex-1">
+                <div className="h-full rounded-full bg-indigo-500/60" style={{ width: `${w}%` }} />
+              </div>
+              <span className="text-[9px] text-indigo-400 w-6 text-right">{w}%</span>
+            </div>
+          ))}
+        </div>
+        <div className="flex gap-1.5">
+          {["bg-indigo-500", "bg-purple-400", "bg-sky-400"].map((c) => (
+            <span key={c} className={`h-5 w-14 rounded-full ${c}/30`} />
+          ))}
+        </div>
+      </div>
+    ),
   },
 ];
 
@@ -171,12 +222,12 @@ export default function DesignGrid() {
           UI Design
           <span className="text-white dark:text-[#d4f5e0] drop-shadow-sm text-4xl leading-none">
             ✦
-          </span>
+          </span> 
         </h1>
         <p className="mt-6 text-base sm:text-lg text-[#3d4a3f]/80 dark:text-[#8ab5a0] leading-relaxed">
-          A collection of tools and sites I&apos;ve built — some useful,
+          A collection of tools and designs I've built — some useful,
           <br className="hidden sm:block" />
-          some experimental, all shipped for the fun of it.
+          some experimental.
         </p>
       </div>
 
@@ -212,11 +263,6 @@ function ProjectCard({ project }: { project: Design }) {
           {project.icon}
         </span>
       </div> 
-
-      <p className="mt-2 text-sm leading-relaxed text-[#4b5348]/80 dark:text-[#8ab5a0]">
-        {project.description}
-      </p>
-
       {project.preview && <div className="mt-auto">{project.preview}</div>}
     </a>
   );

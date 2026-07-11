@@ -174,9 +174,9 @@ export default function ProjectsGrid() {
           </span>
         </h1>
         <p className="mt-6 text-base sm:text-lg text-[#3d4a3f]/80 dark:text-[#8ab5a0] leading-relaxed">
-          A collection of tools and sites I&apos;ve built — some useful,
+          A collection of tools and websites I've developed—most of them are useful,
           <br className="hidden sm:block" />
-          some experimental, all shipped for the fun of it.
+          and some are practical.
         </p>
       </div>
 

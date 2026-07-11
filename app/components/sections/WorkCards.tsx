@@ -150,6 +150,7 @@ export default function WorkCards() {
             </article>
             </Link>
             ) :  
+            <Link href="design" key={work.id}>
             <article
               key={work.id}
               className={`group relative ${work.bgColor} ${work.id === 1 || work.id === 4 ? 'w-full lg:w-3/4' : ''} ${work.id === 2  ? 'lg:-ml-28 lg:w-[120%] xl:w-[110%] ' : ''} ${work.id === 3  ? 'lg:-mr-28 lg:w-[120%] xl:w-[110%] ' : ''}  rounded-[2rem] p-6 sm:p-8 lg:p-10 overflow-hidden transition-transform duration-300 hover:scale-[1.02] cursor-pointer`}
@@ -172,6 +173,7 @@ export default function WorkCards() {
               {/* Subtle overlay on hover */}
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
             </article>
+            </Link>
           ))}
         </div>
       </div>
