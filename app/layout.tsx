@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "./components/layout/ThemeProvider";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ChatWidgetWrapper from "@/app/components/chat/ChatWidgetWrapper";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +39,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <ChatWidgetWrapper />
         </ThemeProvider>
       </body>
     </html>

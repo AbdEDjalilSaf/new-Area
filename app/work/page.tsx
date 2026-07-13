@@ -65,7 +65,7 @@ const notes: NoteItem[] = [
     icon: <span className="text-lg italic font-bold text-white">f</span>,
   },
 ];
-
+ 
 const NoteCard: React.FC<{ note: NoteItem }> = ({ note }) => {
   const Wrapper: React.ElementType = "div";
 
