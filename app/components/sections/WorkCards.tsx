@@ -143,7 +143,7 @@ export default function WorkCards() {
               {/* Mockup Preview */}
               <div className="relative w-full transform transition-transform duration-300 group-hover:translate-y-[-4px]">
                 {work.mockup}
-              </div>
+              </div> 
 
               {/* Subtle overlay on hover */}
               <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300 rounded-[2rem]" />
