@@ -5,6 +5,7 @@ import { ThemeProvider } from "./components/layout/ThemeProvider";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import ChatWidgetWrapper from "@/app/components/chat/ChatWidgetWrapper";
+import ReduxProvider from "@/store/ReduxProvider";
 
 
 const geistSans = Geist({
@@ -35,12 +36,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>
-          <Navbar />
-          {children}
-          <Footer />
-          <ChatWidgetWrapper />
-        </ThemeProvider>
+        <ReduxProvider>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <ChatWidgetWrapper />
+          </ThemeProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

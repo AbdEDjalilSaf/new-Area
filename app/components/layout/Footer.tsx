@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
+import { useDispatch } from "react-redux";
+import { setContactOpen } from "@/store/initialSlice";
 
 const elsewhereLinks = [
   { label: "Figma", href: "https://www.figma.com/files/team/1274447095945034734/drafts?fuid=1274447093663075645" },
@@ -12,11 +14,12 @@ const elsewhereLinks = [
 ];
 
 const contactLinks = [
-  { label: "Message", href: "https://mail.google.com/mail/u/1/#inbox" },
+  { label: "Message" },
 ];
 
 export default function Footer() {
   const { dark, toggleTheme } = useTheme();
+  const dispatch = useDispatch();
 
   return (
     <footer
@@ -86,10 +89,10 @@ export default function Footer() {
               <ul className="space-y-2">
                 {contactLinks.map((link) => (
                   <li key={link.label}>
-                    <Link
-                      href={link.href}
+                    <button
+                      onClick={() => dispatch(setContactOpen(true))}
                       className={`
-                        inline-block text-sm transition-colors duration-300
+                        inline-block cursor-pointer text-sm transition-colors duration-300
                         hover:underline
                         ${
                           dark
@@ -99,7 +102,7 @@ export default function Footer() {
                       `}
                     >
                       {link.label}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>

@@ -3,10 +3,13 @@
 import { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../../lib/data';
 import Link from 'next/link';
+import { useDispatch } from "react-redux";
+import { setContactOpen } from "@/store/initialSlice";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -30,14 +33,25 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-10">
           {NAV_LINKS.map((link) => (
+            link === 'Contact' ? (
+              <button
+                key={link}
+                onClick={() => {
+                  dispatch(setContactOpen(true));
+                }}
+                className="nav-link cursor-pointer text-sm font-medium text-subtle hover:text-accent transition-colors"
+              >
+                {link}
+              </button>
+            ) : (
             <Link
               key={link}
               href={`${link.toLowerCase()}`}
               className="nav-link text-sm font-medium text-subtle hover:text-accent transition-colors"
             >
-              {link}
+              {link} 
             </Link>
-          ))}
+          )))}
          
         </div>
 
@@ -72,16 +86,34 @@ export default function Navbar() {
         }`}
       >
         <div className="px-6 py-8 flex flex-col gap-6 bg-bg/95 backdrop-blur-xl">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link}
-              href={`${link.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
-              className="text-2xl font-semibold text-fg hover:text-accent transition-colors"
-            >
-              {link}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            if (link === 'Contact') {
+              return (
+              <button
+                key={link}
+                onClick={() => {
+                  dispatch(setContactOpen(true));
+                  setMenuOpen(false);
+                }}
+                className="text-2xl cursor-pointer font-semibold text-fg hover:text-accent transition-colors"
+              >
+                {link}
+              </button>
+            )}else {
+              return (
+              <Link
+                key={link}
+                href={`${link.toLowerCase()}`}
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+                className="text-2xl font-semibold text-fg hover:text-accent transition-colors"
+              >
+                {link}
+              </Link>
+            )
+          }})
+          }
         </div>
       </div>
     </nav>

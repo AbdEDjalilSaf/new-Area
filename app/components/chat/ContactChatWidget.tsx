@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { setContactOpen } from "@/store/initialSlice";
 
 interface ContactChatWidgetProps {
   hostName: string;
@@ -13,11 +15,11 @@ export default function ContactChatWidget({
   hostStatus,
   onSendMessage,
 }: ContactChatWidgetProps) {
-  const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Array<{ role: "user" | "host"; content: string }>>([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  const dispatch = useDispatch();
+  const contactOpen = useSelector((state: any) => state.initial.contactOpen);
   const handleSend = async () => {
     if (!message.trim() || isLoading) return;
 
@@ -38,25 +40,10 @@ export default function ContactChatWidget({
 
   return (
     <div className="fixed bottom-4 right-4 z-50">
-      {!isOpen ? (
+      {!contactOpen ? (
         <button
-          onClick={() => setIsOpen(true)}
-          className="bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-colors"
-          aria-label="Open chat"
+          className="hidden"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
         </button>
       ) : (
         <div className="bg-white rounded-lg shadow-2xl w-80 max-h-[500px] flex flex-col">
@@ -66,8 +53,8 @@ export default function ContactChatWidget({
               <p className="text-xs text-blue-100">{hostStatus}</p>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
-              className="text-white hover:text-blue-100"
+              onClick={() => dispatch(setContactOpen(false))}
+              className="text-white "
               aria-label="Close chat"
             >
               <svg
