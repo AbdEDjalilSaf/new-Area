@@ -20,7 +20,7 @@ export default function ChatWidgetWrapper() {
       return "Hmm, something went wrong sending that — mind trying again or emailing me directly?";
     }
   }
-
+ 
   return (
     <ContactChatWidget
       hostName="Abd el-Djalil"

@@ -4,15 +4,15 @@ import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
 
 const elsewhereLinks = [
-  { label: "Figma", href: "https://figma.com" },
-  { label: "Github", href: "https://github.com" },
-  { label: "Posts", href: "/posts" },
-  { label: "CV", href: "/cv" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "Figma", href: "https://www.figma.com/files/team/1274447095945034734/drafts?fuid=1274447093663075645" },
+  { label: "Github", href: "https://github.com/AbdEDjalilSaf" },
+  { label: "Posts", href: "https://www.linkedin.com/in/abdedjalilsaf/recent-activity/all" },
+  { label: "CV", href: "https://drive.google.com/file/d/16utPdheFPU86Wl44I9r_24_vszWOn-Su/view?usp=sharing" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/abdedjalilsaf" },
 ];
 
 const contactLinks = [
-  { label: "Message", href: "/contact" },
+  { label: "Message", href: "https://mail.google.com/mail/u/1/#inbox" },
 ];
 
 export default function Footer() {
